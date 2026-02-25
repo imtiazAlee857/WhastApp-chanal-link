@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D WhatsApp Button</title>
+
+<style>
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    font-family:Arial, sans-serif;
+    padding:20px;
+    text-align:center;
+}
+
+/* Description */
+.description{
+    color:#fff;
+    max-width:500px;
+    font-size:16px;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+/* Click Text */
+.click-text{
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+    animation:blink 1s infinite alternate;
+    text-shadow:0 0 10px #fff, 0 0 20px #25D366;
+}
+
+@keyframes blink{
+    from{opacity:0.5;}
+    to{opacity:1;}
+}
+
+/* Arrow */
+.arrow{
+    font-size:40px;
+    color:#25D366;
+    animation:arrowMove 1s infinite;
+    text-shadow:0 0 10px #25D366, 0 0 20px #25D366;
+}
+
+@keyframes arrowMove{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(10px);}
+    100%{transform:translateY(0);}
+}
+
+/* Shared Button Style */
+.button{
+    position:relative;
+    padding:18px 40px;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition:all 0.2s ease-in-out;
+    margin-top:15px;
+    width:90%;
+    max-width:350px;
+
+    box-shadow: 
+        0 8px 0 rgba(0,0,0,0.4),
+        0 15px 20px rgba(0,0,0,0.4);
+
+    animation:glow 2s infinite alternate;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn{
+    background:linear-gradient(145deg,#25D366,#128C7E);
+}
+
+/* Facebook Button */
+.facebook-btn{
+    background:linear-gradient(145deg,#1877F2,#0d47a1);
+}
+
+/* Lighting Effect */
+@keyframes glow{
+    from{
+        box-shadow:
+        0 0 10px #fff,
+        0 0 20px #25D366,
+        0 8px 0 rgba(0,0,0,0.4),
+        0 15px 20px rgba(0,0,0,0.4);
+    }
+    to{
+        box-shadow:
+        0 0 20px #fff,
+        0 0 40px #25D366,
+        0 8px 0 rgba(0,0,0,0.4),
+        0 15px 20px rgba(0,0,0,0.4);
+    }
+}
+
+.button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:50%;
+    border-radius:15px 15px 0 0;
+    background:linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+}
+
+.button:hover{
+    transform:translateY(3px);
+}
+
+.button:active{
+    transform:translateY(8px);
+}
+
+/* Mobile Adjustments */
+@media (max-width:480px){
+    .click-text{
+        font-size:18px;
+    }
+    .arrow{
+        font-size:30px;
+    }
+    .button{
+        font-size:16px;
+        padding:15px 20px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="description">
+Yahan aap ko milengi dil ko choo lene wali haqeeqi aur sachi kahaniyan — zindagi ke asli waqiat, sabak aur jazbaat ke sath. Har kahani mein ek seekh, ek sach aur ek naya ehsaas.
+</div>
+
+<div class="click-text">Click Here</div>
+<div class="arrow">⬇</div>
+
+<button class="button whatsapp-btn" onclick="joinChannel()">
+    Join WhatsApp Channel
+</button>
+
+<button class="button facebook-btn" onclick="joinFacebook()">
+    Pakistan Update Daily
+</button>
+
+<script>
+function joinChannel(){
+    window.open("https://whatsapp.com/channel/0029Vb7OGqb9mrGY3eVdBQ2V", "_blank");
+}
+
+function joinFacebook(){
+    window.open("https://facebook.com/groups/905693691981597/", "_blank");
+}
+</script>
+
+</body>
+</html>
